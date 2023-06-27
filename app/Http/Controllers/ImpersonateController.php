@@ -11,9 +11,7 @@ class ImpersonateController extends Controller
     {
         if (Auth::user()->isAdmin()) {
             Auth::login($user);
-            session(['impersonated_user_id' => $user->id]);
-            
-            
+            session(['impersonated_user_id'=>$user->id]);
             return redirect()->route('home');
         }
        
